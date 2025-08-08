@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Finder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <h1>🎬 Movie Finder</h1>
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Search movies..." />
+      <select id="typeSelect">
+        <option value="">All</option>
+        <option value="movie">Movie</option>
+        <option value="series">Series</option>
+        <option value="episode">Episode</option>
+      </select>
+      <button onclick="searchMovies()">Search</button>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="modeToggle" onchange="toggleMode()">
+      <span class="slider"></span>
+    </label>
+  </header>
+
+  <main class="movie-container" id="movieContainer">
+    <!-- Movie cards will appear here -->
+  </main>
+
+  <div class="pagination">
+    <button onclick="changePage(-1)">⬅️ Prev</button>
+    <span id="pageNumber">Page 1</span>
+    <button onclick="changePage(1)">Next ➡️</button>
+  </div>
+
+  <section class="favorites-section">
+    <h2>❤️ Your Watchlist</h2>
+    <div class="movie-container" id="favoritesContainer">
+      <!-- Favorite movies will show here -->
+    </div>
+  </section>
+
+  <div class="modal" id="movieModal">
+    <div class="modal-content" id="modalContent">
+      <span class="close-button" onclick="closeModal()">×</span>
+      <div id="modalDetails">Loading...</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
